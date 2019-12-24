@@ -7,4 +7,6 @@
 
 <img src="<%=request.getContextPath() %>/images/136gill_gangnam_1.PNG" alt="dfsdfdsf" />
 
+
+
 <%@ include file="/WEB-INF/views/common/footer.jsp" %>
