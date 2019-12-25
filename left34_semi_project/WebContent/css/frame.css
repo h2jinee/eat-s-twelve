@@ -1,0 +1,327 @@
+html{
+    font-family: "SpoqaHanSans", "Noto Sans SC", "APPLE SD Gothic NEO", "sans-serif";
+    word-wrap: break-word;
+}
+body{
+    position: relative;
+    display: block;
+    min-width: 1440px;
+    margin: 0 auto;
+    font-size: 100%;
+    line-height: 100%;
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    word-break: keep-all;
+}
+footer{
+    display: block;
+    background-color: #2e2e2e;
+    /* background-color: #FFAC35; */
+    position: relative;
+    text-align: left;
+    height: 400px;
+}
+.inner{
+    margin: 0 auto;
+    padding-top: 65px;
+    max-width: 1200px;
+}
+a{
+    /* color: rgba(255, 255, 255, 0.7); */
+    text-decoration: none;
+    /* color: #FFAC35; */
+}
+.list-links>li {
+    /* display: block; */
+    width: 307px;
+}
+.list-links>li a{
+    font-size: 1rem;
+    line-height: 35px;
+}
+ol, ul, ul li {
+    list-style: none;
+}
+p{
+    display: block;
+    margin-block-start: 6em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+.copyrights small{
+    display: block;
+    /* color: rgba(255, 255, 255, 0.7); */
+    /* color: #FFAC35; */
+    color: #fff;
+    font-size: 0.875rem;
+    line-height: 22px;
+}
+.copyright{
+    display: inline-block;
+    padding-top: 40px;
+    font-weight: bold;
+    line-height: 13px;
+    vertical-align: top;
+}
+footer .txt_copy {
+    color: rgba(255, 255, 255, 0.7);
+    display: block;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+}
+:lang(ko) {
+    font-family: "Apple SD Gothic Neo", AppleSDGothicNeo, "Malgun Gothic", "맑은 고딕", sans-serif;
+}
+#innerHead{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    /* box-shadow: 0 4px 11px rgba(0,0,0,0.1); */
+    z-index: 900;
+    background: #fff;
+    border-bottom: solid 1px #e2e2e2;
+}
+.headerWrapper{
+    height: 66px;
+    width: 1080px;
+    margin: 0px auto;
+    position: relative;
+}
+.title__TitleWrapper{
+    height: 66px;
+    width: 1080px;
+    position: relative;
+    width: 139px;
+    padding-top: 23px;
+    padding-left: 1px;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    margin: 0px auto;
+}
+.search__SearchBlock{
+    position: absolute;
+    left: 300px;
+    top: 5px;
+    width: 350px;
+    height: 40px;
+    box-sizing: border-box;
+    border-radius: 3.2px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(227, 229, 232);
+    border-image: initial;
+    overflow: hidden;
+}
+.search__SearchBlock>input{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 300px;
+    margin-left: 32px;
+    height: 18px;
+    font-size: 15px;
+    line-height: 1.17;
+    color: rgb(137, 137, 141);
+    padding: 11px 0px;
+    border-width: 0px;
+    border-style: none;
+    border-color: inherit;
+    border-image: initial;
+    outline: none;
+    /* z-index: -1; */
+}
+.search__SearchButton span{
+    display: block;
+    width: 14.4px;
+    height: 14.4px;
+    background-image: url(https://t1.kakaocdn.net/friends/new_store/2.0/pc/ico-header-search.png);
+    background-size: 14.4px 14.4px;
+}
+button{
+    text-rendering: auto;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    text-align: center;
+    font: 400 13.3333px Arial;
+    border: 0 none;
+    background-color: transparent;
+    cursor: pointer;
+    vertical-align: middle;
+    font-size: 14px;
+    line-height: 1.5;
+}
+.search__SearchButton{
+    position: absolute;
+    left: 0px;
+    width: 24.4px;
+    height: 38px;
+    padding-left: 9px;
+    outline: none;
+}
+.hide{
+    display: none;
+}
+hr{
+    display: block;
+    unicode-bidi: isolate;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    overflow: hidden;
+    border-style: inset;
+    border-width: 1px;
+    z-index: 2;
+}
+span{
+    top: 300px;
+}
+.mypage__Icon{
+    /* position: absolute; */
+    /* position: relative; */
+    display: flex;
+    width: 18px;
+    height: 20px;
+    background-image: url(https://t1.kakaocdn.net/friends/new_store/2.0/pc/ico-header-mypage.png);
+    background-size: 18px 19px;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.mypage__Link{
+    position: absolute;
+    display: block;
+    right: 60px;
+    top: 1px;
+    display: inline-block;
+    vertical-align: top;
+    background-color: white;
+    padding: 0px;
+    margin: 15px 0px;
+}
+.Header__LogoIcon{
+    width: 85px;
+    height: 32px;
+    background-image: url(logo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: translateX(-350px) translateY(-54px);
+}
+.title__Link{
+    position: relative;
+​
+    display: flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    -webkit-box-pack: center;
+    -webkit-box-direction: normal;
+}
+section div{
+    display: flex;
+    text-align: center;
+    margin-left: 400px;
+    margin-top: 200px;
+    min-height: 600px;
+    font-size: 100px;
+}
+.popularSearch-ranking-list-wrapper{
+    width: 217px;
+    height: 32px;
+    margin-left: 14px;
+    float: left;
+    position: relative;
+}
+.screen_out{
+    overflow: hidden;
+    position: absolute;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    text-indent: -9999px;
+}
+.info_service{
+    padding: 28px 0 34px;
+}
+.link_service{
+    display: inline-block;
+    font-size: 16px;
+    line-height: 19px;
+    color: #fff;
+    /* color: rgba(255, 255, 255, 0.7); */
+    vertical-align: top;
+    font-weight: bold;
+}
+.realtimeKeyWord {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    overflow: hidden;
+    margin-top: -10px;
+    margin-left: 342px;
+    width: 58px;
+    height: 20px;
+}
+.blind{
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    margin: -1px;
+    width: 1px;
+    height: 1px;
+}
+.ah_item{
+    padding-top: 3px;
+    padding-left: 21px;
+    vertical-align: top;
+    position: relative;
+    padding: 4px 0 0 21px;
+    height: 18px;
+    margin-left: 670px;
+    transform: translateY(14px);
+}
+.ah_ico_open{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -9px;
+    margin-left: 350px;
+    width: 11px;
+    height: 6px;
+    background-position: -200px -81px;
+        background-image: url(https://s.pstatic.net/static/www/img/uit/2019/sp_main_v191212.png);
+    background-repeat: no-repeat;
+}
+ol, ul{
+    list-style: none;
+}
+.ah_roll {
+    zoom: 1;
+}
+.ah_a{
+    display: block;
+    color: #000;
+}
+.ah_r{
+    margin-top: -9px;
+    color: rgb(240, 160, 20);
+    font-size: 16px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    min-width: 17px;
+    vertical-align: top;
+    text-align: center;
+    font-family: Arial,Sans-serif;
+    line-height: 18px;
+}
+.link_service2{
+    position: relative;
+    margin-left: 10px;
+    padding-left: 22px;
+}
