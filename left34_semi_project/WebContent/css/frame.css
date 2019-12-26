@@ -18,6 +18,7 @@ body{
     word-break: keep-all;
 }
 footer{
+	clear: both;
     display: block;
     background-color: #2e2e2e;
     /* background-color: #FFAC35; */
@@ -223,13 +224,12 @@ hr{
     -webkit-box-pack: center;
     -webkit-box-direction: normal;
 }
-section div{
-    display: flex;
+section>div{
     text-align: center;
 	padding: 10px;
     margin-left: 0px;
     margin-top: 0px;
-    min-height: 0px;
+    min-height: 800px;
 }
 .popularSearch-ranking-list-wrapper{
     width: 217px;

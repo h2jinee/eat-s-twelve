@@ -5,7 +5,7 @@
 
 <h4>header/footer 테스트</h4>
 
-	
+<a href="<%=request.getContextPath() %>/searchList">검색후 화면</a>	
 
 
 
