@@ -1,2 +1,2 @@
 # eat-s-twelve
-left34's semi_project
+Eat's TWelve의 세미 프로젝트 깃허브 공간입니다.
