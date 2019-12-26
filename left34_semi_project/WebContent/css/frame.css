@@ -1,3 +1,7 @@
+section {
+	position:relative;
+}
+
 html{
     font-family: "SpoqaHanSans", "Noto Sans SC", "APPLE SD Gothic NEO", "sans-serif";
     word-wrap: break-word;
@@ -75,7 +79,7 @@ footer .txt_copy {
     font-family: "Apple SD Gothic Neo", AppleSDGothicNeo, "Malgun Gothic", "맑은 고딕", sans-serif;
 }
 #innerHead{
-    position: fixed;
+   
     top: 0;
     left: 0;
     right: 0;
@@ -180,9 +184,7 @@ hr{
     border-width: 1px;
     z-index: 2;
 }
-span{
-    top: 300px;
-}
+
 .mypage__Icon{
     /* position: absolute; */
     /* position: relative; */
@@ -200,7 +202,7 @@ span{
     right: 60px;
     top: 1px;
     display: inline-block;
-    vertical-align: top;
+	vertical-align: top;
     background-color: white;
     padding: 0px;
     margin: 15px 0px;
@@ -215,7 +217,6 @@ span{
 }
 .title__Link{
     position: relative;
-​
     display: flex;
     justify-content: center;
     -webkit-justify-content: center;
@@ -225,10 +226,10 @@ span{
 section div{
     display: flex;
     text-align: center;
-    margin-left: 400px;
-    margin-top: 200px;
-    min-height: 600px;
-    font-size: 100px;
+	padding: 10px;
+    margin-left: 0px;
+    margin-top: 0px;
+    min-height: 0px;
 }
 .popularSearch-ranking-list-wrapper{
     width: 217px;

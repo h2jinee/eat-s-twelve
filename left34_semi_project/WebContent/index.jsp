@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <%@ include file="/WEB-INF/views/common/header.jsp" %>
 
-<h2>header/footer 테스트</h2>
+<h4>header/footer 테스트</h4>
 
-<img src="<%=request.getContextPath() %>/images/136gill_gangnam_1.PNG" alt="dfsdfdsf" />
+	
 
 
 
