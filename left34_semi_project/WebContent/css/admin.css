@@ -1,0 +1,10 @@
+/*페이지바*/
+div#pageBar{margin-top:10px; text-align:center; background-color:rgba(0, 188, 212, 0.3);}
+div#pageBar span.cPage{color: #0066FF; margin-right: 5px;}
+div#pageBar a{margin-right: 5px;}
+
+div.wrapper{position: relative;}
+ul#autoComplete{background-color: white; min-width: 159px; border: 1px solid gray; position: absolute; top: 22px; padding:0; margin:0;}
+ul#autoComplete li{padding:0 10px; list-style:none; cursor:pointer;}
+ul#autoComplete li.sel{background:lightseagreen; color:white;}
+span.srchval{color:red;}
