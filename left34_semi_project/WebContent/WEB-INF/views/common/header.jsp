@@ -24,7 +24,7 @@
                         <div class="realtimeKeyWord_rolling">
                             <ul class="ah_1">
                                 <li class="ah_item">
-                                    <a href="" class="ah_a">
+                                    <a href="<%=request.getContextPath() %>/admin/adminForm" class="ah_a">
                                         <span class="ah_r">1</span>
                                         <span class="ah_k">강남역</span>
                                     </a>
