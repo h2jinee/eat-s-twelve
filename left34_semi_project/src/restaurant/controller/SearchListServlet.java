@@ -25,6 +25,8 @@ public class SearchListServlet extends HttpServlet {
 		
 		//파라미터핸들링
 		String searchKeyword = request.getParameter("searchKeyword");
+		
+		
 		//업무로직
 		int totalCount = new PhotoService().selectPhotoCount(searchKeyword);
 		final int numPerPage = 8;
