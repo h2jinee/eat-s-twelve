@@ -2,6 +2,7 @@ package admin.model.service;
 
 import java.sql.Connection;
 import java.util.List;
+import java.util.Map;
 
 import admin.model.dao.AdminDAO;
 
@@ -36,6 +37,29 @@ public class AdminService {
 		User user=new AdminDAO().searchById(conn,id);
 		close(conn);
 		return	user;
+	}
+
+	public int insertId(String memberId, String time) {
+		Connection conn=getConnection();
+		int result=new AdminDAO().insertId(conn,memberId,time);
+		close(conn);
+		return result;
+	}
+
+	public List<Map<String, Object>> adminVisit() {
+		Connection conn=getConnection();
+		List<Map<String, Object>> list=new AdminDAO().adminVisit(conn);
+		close(conn);
+		return list;
+	}
+
+	public List<Map<String, Object>> totalvisit() {
+		Connection conn=getConnection();
+		
+		List<Map<String, Object>> list=new AdminDAO().totalvisit(conn);
+		System.out.println("ц╒ец"+list.toString());
+		close(conn);
+		return list;
 	}
 
 	

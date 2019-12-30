@@ -8,7 +8,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Properties;
 
 
@@ -17,9 +19,9 @@ import user.model.vo.User;
 public class AdminDAO {
 	private Properties prop=new Properties();
 	public AdminDAO() {
-		System.out.println("ddd");
+		
 		String fileName=AdminDAO.class.getResource("/sql/admin/admin-query.properties").getPath();
-		System.out.println("dsadasasdd");
+	
 		try {
 			prop.load(new FileReader(fileName));
 		}  catch (IOException e) {
@@ -131,6 +133,73 @@ public class AdminDAO {
 			e.printStackTrace();
 		}
 		return u;
+	}
+	public int insertId(Connection conn, String memberId, String time) {
+		PreparedStatement pstmt=null;
+		int result=0;
+		String query =prop.getProperty("insertId");
+		
+		User u=null;
+		try {
+			pstmt=conn.prepareStatement(query);
+			pstmt.setString(1, memberId);
+			pstmt.setString(2, time);
+			
+			result=pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
+	}
+	public List<Map<String, Object>> adminVisit(Connection conn) {
+		PreparedStatement pstmt=null;
+		ResultSet rset=null;
+		String query =prop.getProperty("adminVisit");
+		List<Map<String, Object>> list = null;
+		
+		User u=null;
+		try {
+			pstmt=conn.prepareStatement(query);
+			list = new ArrayList<>();
+			
+			rset=pstmt.executeQuery();
+			while(rset.next()) {
+				Map<String, Object> map = new HashMap<>();
+				map.put("id", rset.getString("id"));
+				map.put("total", rset.getInt("total"));
+				map.put("visit_time", rset.getString("visit_time"));
+				list.add(map);
+			
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
+	}
+	public List<Map<String, Object>> totalvisit(Connection conn) {
+		PreparedStatement pstmt=null;
+		ResultSet rset=null;
+		String query =prop.getProperty("totalvisit");
+		List<Map<String, Object>> list = null;
+		try {
+			pstmt=conn.prepareStatement(query);	
+			rset=pstmt.executeQuery();
+			list = new ArrayList<>();
+			
+			while(rset.next()) {
+				Map<String, Object> map = new HashMap<>();
+				map.put("visit_time", rset.getString("visit_time"));
+				map.put("total", rset.getInt("total"));
+				list.add(map);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
 	}
 	
 }
