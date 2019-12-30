@@ -49,7 +49,4 @@
         </div>
     </header>
     <hr class="hide">
-​
-    <section>
-        <div>
 
