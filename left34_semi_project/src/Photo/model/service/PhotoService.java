@@ -25,15 +25,38 @@ public class PhotoService {
 		return totalPage;
 	}
 
-	public List<Photo> selectPhotoList(int cPage, int numPerPage, String searchKeyword) {
-		List<Photo> list = new ArrayList<>();
+	public List<String> selectPhotoList(String searchKeyword) {
+		List<String> list = new ArrayList<>();
 		Connection conn = getConnection();
 		
-		list = new PhotoDAO().selectPhotoList(conn, cPage, numPerPage, searchKeyword);
+		list = new PhotoDAO().selectPhotoList(conn,searchKeyword);
 		
 		close(conn);
 		
 		return list;
+	}
+
+	public List<String> selectPhotoListByLike(String searchKeyword) {
+		List<String> list = new ArrayList<>();
+		Connection conn = getConnection();
+		
+		list = new PhotoDAO().selectPhotoListByLike(conn,searchKeyword);
+		
+		close(conn);
+		
+		return list;
+	}
+
+	public Photo selectOneByRName(String rName) {
+		
+		Photo p = new Photo();
+		Connection conn = getConnection();
+		
+		p = new PhotoDAO().selectOneByRName(conn,rName);
+		
+		close(conn);
+		
+		return p;
 	}
 
 }

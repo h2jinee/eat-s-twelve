@@ -65,9 +65,9 @@ public class PhotoDAO {
 		return result;
 	}
 
-	public List<Photo> selectPhotoList(Connection conn, int cPage, int numPerPage, String searchKeyword) {
+	public List<String> selectPhotoList(Connection conn, String searchKeyword) {
 		
-		List<Photo> list = null;
+		List<String> list = null;
 		String query = prop.getProperty("selectPhotoList");
 		
 		PreparedStatement pstmt = null;
@@ -79,19 +79,11 @@ public class PhotoDAO {
 			pstmt.setString(2, "%"+searchKeyword+"%");
 			pstmt.setString(3, "%"+searchKeyword+"%");
 			pstmt.setString(4, "%"+searchKeyword+"%");
-			pstmt.setString(5, "%"+searchKeyword+"%");
-			pstmt.setInt(6, (cPage-1)*numPerPage+1);
-			pstmt.setInt(7, cPage*numPerPage);
 
 			rset = pstmt.executeQuery();
 			
 			while(rset.next()) {
-				Photo p = new Photo();
-				p.setImgNo(rset.getInt("img_no"));
-				p.setrName(rset.getString("r_name"));
-				p.setLocation(rset.getString("location"));
-				p.setImgName(rset.getString("img_name"));
-				list.add(p);
+				list.add(rset.getString("r_name"));
 			}
 			
 		} catch (SQLException e) {
@@ -104,6 +96,69 @@ public class PhotoDAO {
 		
 		
 		return list;
+	}
+
+	public List<String> selectPhotoListByLike(Connection conn, String searchKeyword) {
+		List<String> list = null;
+		String query = prop.getProperty("selectPhotoListByLike");
+		
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		try {
+			list = new ArrayList<>();
+			pstmt = conn.prepareStatement(query);
+			pstmt.setString(1, "%"+searchKeyword+"%");
+			pstmt.setString(2, "%"+searchKeyword+"%");
+			pstmt.setString(3, "%"+searchKeyword+"%");
+			pstmt.setString(4, "%"+searchKeyword+"%");
+
+			rset = pstmt.executeQuery();
+			
+			while(rset.next()) {
+				list.add(rset.getString("r_name"));
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new MyException("검색 사진 로드 실패!");
+		} finally {
+			close(rset);
+			close(pstmt);
+		}
+		
+		
+		return list;
+	}
+
+	public Photo selectOneByRName(Connection conn, String rName) {
+		
+		Photo p = null;
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		String query = prop.getProperty("selectOneByRName");
+		
+		try {
+			pstmt = conn.prepareStatement(query);
+			pstmt.setString(1, rName);
+			
+			rset = pstmt.executeQuery();
+			p = new Photo();
+			if(rset.next()) {
+				p.setrName(rName);
+				p.setImgNo(rset.getInt("img_no"));
+				p.setImgName(rset.getString("img_name"));
+				p.setLocation(rset.getString("location"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new MyException("selectOneByRname(photo)조회 실패");
+		} finally {
+			close(rset);
+			close(pstmt);
+		}
+		
+		
+		return p;
 	}
 
 }
