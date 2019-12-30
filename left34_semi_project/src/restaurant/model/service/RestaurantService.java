@@ -1,9 +1,11 @@
 package restaurant.model.service;
 
-import static common.JDBCTemplate.close;
+import static common.JDBCTemplate.*;
 import static common.JDBCTemplate.getConnection;
 
 import java.sql.Connection;
+import java.util.ArrayList;
+import java.util.List;
 
 import restaurant.model.dao.RestaurantDAO;
 import restaurant.model.vo.Restaurant;
@@ -35,6 +37,46 @@ public class RestaurantService {
 		close(conn);
 		
 		return m;
+	}
+	
+	public List<Restaurant> selectByFood(String srchFood) {
+		Connection conn = getConnection();
+		List<Restaurant> foodList = new ArrayList<>();
+		RestaurantDAO restaurantDAO = new RestaurantDAO();
+		
+		foodList = restaurantDAO.selectByFood(srchFood);
+
+		close(conn);
+		
+		
+		return foodList;
+	}
+	
+	public List<Restaurant> recentRestaurant(String userId) {
+		Connection conn = getConnection();
+		
+		List<Restaurant> list = new ArrayList<>();
+		RestaurantDAO restaurantDAO = new RestaurantDAO();
+		
+		list = restaurantDAO.recentRestaurant(conn, userId);
+		
+		close(conn);
+		
+		return list;
+	}
+	
+	public List<Restaurant> wishRestaurant(String userId) {
+		
+		Connection conn = getConnection();
+
+		List<Restaurant> list = new ArrayList<>();
+		RestaurantDAO restaurantDAO = new RestaurantDAO();
+
+		list = restaurantDAO.wishRestaurant(conn, userId);
+
+		close(conn);
+
+		return list;
 	}
 
 }

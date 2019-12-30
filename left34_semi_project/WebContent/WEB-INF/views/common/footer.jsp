@@ -1,12 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-</div>
-    </section>
-​
     <footer>
         <div id="footer">
-            <div class="inner">
+            <div class="inner__Copy">
                 <h2 class="screen_out">서비스 이용정보</h2>
                 <div class="info_service">
                     <a href="#" class="link_service link_company">회사소개</a>
