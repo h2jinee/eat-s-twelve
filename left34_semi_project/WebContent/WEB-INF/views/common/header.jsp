@@ -116,7 +116,13 @@ function submit(){
 	console.log($("#searchFood").val());
 	var $searchKeyword = $("#searchFood").val().trim();
 	
-	location.href="<%=request.getContextPath()%>/searchList?searchKeyword="+$searchKeyword;
+	if($searchKeyword.length==0){
+		alert("검색어를 입력해주세요.");
+		return;
+	}else{
+		location.href="<%=request.getContextPath()%>/searchList?searchKeyword="+$searchKeyword;
+		
+	}
 	
 }
 
