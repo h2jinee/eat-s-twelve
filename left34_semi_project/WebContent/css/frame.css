@@ -3,17 +3,10 @@ html{font-family: "SpoqaHanSans", "Noto Sans SC", "APPLE SD Gothic NEO", "sans-s
 body{position: relative; display: block; min-width: 1440px; margin: 0 auto; font-size: 100%;
     line-height: 100%; text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: keep-all;}
     
-a{text-decoration: none;}
 ol, ul, ul li {list-style: none;}
 :lang(ko) {font-family: "Apple SD Gothic Neo", AppleSDGothicNeo, "Malgun Gothic", "맑은 고딕", sans-serif;}
     
-/*footer*/
-#footer{ display: block; background-color: #2e2e2e; position: relative; text-align: left; height: 400px;}
-#footer .inner{ margin: 0 auto; padding-top: 65px; max-width: 1200px;}
-.copyrights small{display: block; color: #fff; font-size: 0.875rem;line-height: 22px;}
-.copyright{ display: inline-block; padding-top: 40px; font-weight: bold; line-height: 13px; vertical-align: top;}
-footer .txt_copy {color: rgba(255, 255, 255, 0.7); display: block; font-weight: 500; font-size: 12px;
-				 line-height: 18px;}
+
 				 
 /*header*/		
 .header_title img{position:absolute; top:-12%; left:-17%; height:60px;}		 
@@ -101,8 +94,6 @@ span.srchval{color:red;}
 }
 			 
 /*section*/
- section div{ display: flex; text-align: center; margin-left: 0; margin-top: 200px; min-height: 600px;
-				font-size: 100px; } 
 				
 				
 				
@@ -166,7 +157,7 @@ span.srchval{color:red;}
 .recentBottom .logoutbutton{position:absolute; padding-top:10px; right:39%; font-size:25px; color:orange}
 
 /*headerImg*/
-.ImgPosition{width:1440px; height:400px;  margin:0 auto;}
+.ImgPosition{width:1440px;  margin:0 auto;}
 .headerImg img{width:1440px;}
 .headerImg button.slick-prev.slick-arrow{visibility:hidden;}
 .headerImg button.slick-next.slick-arrow{visibility:hidden;}
@@ -176,16 +167,25 @@ span.srchval{color:red;}
 	z-index : 100;
 } */
 
-
+.bodyStart{
+	width:1440px; margin:0 auto; position:relative;
+}
 
 
 /*footer*/
+#footer{ width:1440px; display: block; background-color: #2e2e2e; position: relative; text-align: left; height: 300px;
+		margin:0 auto;}
+#footer .inner{ margin: 0 auto; padding-top: 65px; max-width: 1200px;}
+.copyrights small{display: block; color: #fff; font-size: 0.875rem;line-height: 22px;}
+.copyright{ display: inline-block; padding-top: 40px; font-weight: bold; line-height: 13px; vertical-align: top;}
+footer .txt_copy {color: rgba(255, 255, 255, 0.7); display: block; font-weight: 500; font-size: 12px;
+				 line-height: 18px;}
 .screen_out{overflow: hidden; position: absolute; width: 0; height: 0; line-height: 0; text-indent: -9999px;}
 .info_service{ padding: 28px 0 34px; }
 .link_service{display: inline-block; font-size: 16px; line-height: 19px; color: #fff;
 				/* color: rgba(255, 255, 255, 0.7); */ vertical-align: top; font-weight: bold; }
 .link_service2{position: relative; margin-left: 10px; padding-left: 22px;}
-				
+		
 
 
 

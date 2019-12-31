@@ -112,6 +112,13 @@ $(function(){
 	$recentpage.find("ul ul").hide();
 	$recentpage.find("li.recent-page-title > ul").show(); */
 });
+function submit(){
+	console.log($("#searchFood").val());
+	var $searchKeyword = $("#searchFood").val().trim();
+	
+	location.href="<%=request.getContextPath()%>/searchList?searchKeyword="+$searchKeyword;
+	
+}
 
 /* $(".recent_login").on('click',function(){ */
 function recentLogin(){
@@ -215,81 +222,79 @@ function wishRecent(){
 
 </head>
 <body>
-    <header>
-        <div id="innerHead">
-            <div class="headerWrapper">
-                <form>
-                	<div class="header_title">
-                		<a href="<%=request.getContextPath()%>">
-                			<img src="images/title.png"/>
-                		</a>
-                	</div>
-                    <div class="search__SearchBlock">
-                        <input type="text" id="searchFood" name="searchKeyword" placeholder="지역, 식당 또는 음식을 입력하세요"/>
-                        	<ul id="search_AutoSearch"></ul>
-                        <span id="searchIcon"></span>
-                    </div>
-                    <span>
-                    	<input type="button" class="click_SearchButton" value="검색" />
-                    </span>
-					<h3 class="blind">급상승 검색어</h3>
-					<ul class="ah_1">
-						<li class="ah_item"><a href="" class="ah_a"> <span
-								class="ah_r">1</span> <span class="ah_k">강남역</span>
-						</a></li>
-					</ul>
-					<span class="ah_ico_open"></span>
-					<nav>
-						<div class="container">
-							<ul class="tab_menu">
-								<div>
-									<li><a href="#">검색순위</a></li>
-								</div>
-								<div>
-									<li><a href="#">맛집리스트</a></li>
-								</div>
-<%-- 								<% if(memberLoggedIn != null && "admin".equals(memberLoggedIn.getMemberId())){ %> --%>
-								<!-- <div>
+	<div id="innerHead">
+		<div class="headerWrapper">
+			<div class="header_title">
+				<a href="<%=request.getContextPath()%>"> 
+				<img src="images/title.png" />
+				</a>
+			</div>
+			<div class="search__SearchBlock">
+				<input type="text" id="searchFood" name="searchKeyword" placeholder="지역, 식당 또는 음식을 입력하세요" />
+				<ul id="search_AutoSearch"></ul>
+				<span id="searchIcon"></span>
+			</div>
+			<span> <input type="button" class="click_SearchButton" onclick="submit();" value="검색" />
+			</span>
+			<h3 class="blind">급상승 검색어</h3>
+			<ul class="ah_1">
+				<li class="ah_item"><a href="" class="ah_a"> <span
+						class="ah_r">1</span> <span class="ah_k">강남역</span>
+				</a></li>
+			</ul>
+			<span class="ah_ico_open"></span>
+			<nav>
+				<div class="container">
+					<ul class="tab_menu">
+						<div>
+							<li><a href="#">검색순위</a></li>
+						</div>
+						<div>
+							<li><a href="#">맛집리스트</a></li>
+						</div>
+						<%-- 								<% if(memberLoggedIn != null && "admin".equals(memberLoggedIn.getMemberId())){ %> --%>
+						<!-- <div>
 									<li><a href="<%=request.getContextPath()%>/admin/adminForm">관리자페이지</a></li>
 								</div> -->
-<%-- 								<%}else{ %> --%>
-								<div>
-									<li><a href="<%=request.getContextPath()%>/user/userForm">마이페이지</a></li>
-								</div>
-								<%-- <%}%> --%>
-								
-								<div>
-									<li>
-										<img src="images/mypageicon.png" class="recent_login" onclick="recentLogin();"/>
-									</li>
-								</div>
-							</ul>
+						<%-- 								<%}else{ %> --%>
+						<div>
+							<li><a href="<%=request.getContextPath()%>/user/userForm">마이페이지</a></li>
 						</div>
-					</nav>
-					<div class="notice">
-					
-						
-                    </div>
+						<%-- <%}%> --%>
 
-					<!--end container -->
-				</form>
-				
-            </div>
-        </div>
-    <hr class="hide">
-	<div class="ImgPosition">
-		<div class= "headerImg">
-			<div><img src="images/headerimg01.png" alt="사진1"></div>
-			<div><img src="images/headerimg02.png" alt="사진1"></div>
-			<div><img src="images/headerimg03.png" alt="사진1"></div>
-			<div><img src="images/headerimg01.png" alt="사진1"></div>
-			<div><img src="images/headerimg02.png" alt="사진1"></div>
-			<div><img src="images/headerimg03.png" alt="사진1"></div>
+						<div>
+							<li><img src="images/mypageicon.png" class="recent_login"
+								onclick="recentLogin();" /></li>
+						</div>
+					</ul>
+				</div>
+			</nav>
+			<div class="notice"></div>
 		</div>
 	</div>
-	</header>
-​
-    <section>
-
-        <div>
-
+	<hr class="hide">
+    
+    
+    <div class="bodyStart">
+		<div class="ImgPosition">
+			<div class="headerImg">
+				<div>
+					<img src="images/headerimg01.png" alt="사진1">
+				</div>
+				<div>
+					<img src="images/headerimg02.png" alt="사진1">
+				</div>
+				<div>
+					<img src="images/headerimg03.png" alt="사진1">
+				</div>
+				<div>
+					<img src="images/headerimg01.png" alt="사진1">
+				</div>
+				<div>
+					<img src="images/headerimg02.png" alt="사진1">
+				</div>
+				<div>
+					<img src="images/headerimg03.png" alt="사진1">
+				</div>
+			</div>
+		</div>
