@@ -7,7 +7,7 @@
 <div class =userTab>
 	<li>
 		<a href="<%=request.getContextPath() %>/searchList">검색후 화면</a>	
-		<a href="<%=request.getContextPath() %>/restaurants">상세화면</a>	
+		<a href="<%=request.getContextPath() %>/restaurants">화면</a>	
 	</li>
 </div>
 
