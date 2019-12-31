@@ -264,7 +264,7 @@ function wishRecent(){
 								</div> -->
 						<%-- 								<%}else{ %> --%>
 						<div>
-							<li><a href="<%=request.getContextPath()%>/user/userForm">마이페이지</a></li>
+							<li><a href="<%=request.getContextPath()%>/user/userForm?userId=ckdxor1014">마이페이지</a></li>
 						</div>
 						<%-- <%}%> --%>
 

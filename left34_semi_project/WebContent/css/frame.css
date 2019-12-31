@@ -169,7 +169,7 @@ span.srchval{color:red;}
 } */
 
 .bodyStart{
-	width:1440px; margin:0 auto; position:relative;
+	width:1440px; margin:0 auto; position:relative; min-height:900px;
 }
 
 
