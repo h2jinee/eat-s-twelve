@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
+import Photo.model.service.PhotoService;
+import Photo.model.vo.Photo;
 import restaurant.model.service.RestaurantService;
 import restaurant.model.vo.Restaurant;
 
@@ -29,21 +31,31 @@ public class wishRestaurantServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		String userId = request.getParameter("userId");
-		List<Restaurant> list = new ArrayList<>();
+		List<Restaurant> restaurantList = new ArrayList<>();
+		List<Photo> photoList = new ArrayList<>();
 		RestaurantService restaurantService = new RestaurantService();
+		PhotoService photoService = new PhotoService();
 		
-		list = restaurantService.wishRestaurant(userId);
+		restaurantList = restaurantService.wishRestaurant(userId);
+		if(restaurantList!=null) {
+			for(int i=0; i<restaurantList.size(); i++) {
+				Photo p = photoService.selectOneByRName(restaurantList.get(i).getrName());
+				photoList.add(p);
+			}
+		}
 
 		JSONArray jsonArray = new JSONArray();
 
-		for(Restaurant r : list) {
+		for(int i=0; i<restaurantList.size(); i++) {
 			JSONObject jsonPhoto = new JSONObject();
-			jsonPhoto.put("rName", r.getrName());
-			jsonPhoto.put("grade", r.getGrade());
-			jsonPhoto.put("location", r.getLocation());
-			jsonPhoto.put("type", r.getType());
+			jsonPhoto.put("rName", restaurantList.get(i).getrName());
+			jsonPhoto.put("grade", restaurantList.get(i).getGrade());
+			jsonPhoto.put("location", restaurantList.get(i).getLocation());
+			jsonPhoto.put("type", restaurantList.get(i).getType());
+			jsonPhoto.put("imgName", photoList.get(i).getImgName());
 			jsonArray.add(jsonPhoto);
 		}
+
 
 		response.setContentType("application/json; charset=utf-8");
 		response.getWriter().append(jsonArray.toString());

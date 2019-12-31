@@ -21,5 +21,14 @@ public class UserService {
 		return u;
 	}
 
+	public User selectOne(String memberId) {
+		Connection conn = getConnection();
+		User u = new UserDAO().selectOne(conn, memberId);
+		
+		close(conn);
+		
+		return u;
+	}
+
 
 }

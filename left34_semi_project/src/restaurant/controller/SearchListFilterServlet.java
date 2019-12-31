@@ -33,6 +33,7 @@ public class SearchListFilterServlet extends HttpServlet {
 				
 				//2.parameter handling
 				String searchKeyword = request.getParameter("searchKeyword");
+				System.out.println(searchKeyword);
 				String value = request.getParameter("value");
 				List<String> searchList = new ArrayList<>();
 				//전송확인

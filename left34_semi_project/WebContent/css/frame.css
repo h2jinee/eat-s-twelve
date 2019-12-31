@@ -3,17 +3,10 @@ html{font-family: "SpoqaHanSans", "Noto Sans SC", "APPLE SD Gothic NEO", "sans-s
 body{position: relative; display: block; min-width: 1440px; margin: 0 auto; font-size: 100%;
     line-height: 100%; text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: keep-all;}
     
-a{text-decoration: none;}
 ol, ul, ul li {list-style: none;}
 :lang(ko) {font-family: "Apple SD Gothic Neo", AppleSDGothicNeo, "Malgun Gothic", "맑은 고딕", sans-serif;}
     
-/*footer*/
-#footer{ display: block; background-color: #2e2e2e; position: relative; text-align: left; height: 400px;}
-#footer .inner{ margin: 0 auto; padding-top: 65px; max-width: 1200px;}
-.copyrights small{display: block; color: #fff; font-size: 0.875rem;line-height: 22px;}
-.copyright{ display: inline-block; padding-top: 40px; font-weight: bold; line-height: 13px; vertical-align: top;}
-footer .txt_copy {color: rgba(255, 255, 255, 0.7); display: block; font-weight: 500; font-size: 12px;
-				 line-height: 18px;}
+a{text-decoration:none;}
 				 
 /*header*/		
 .header_title img{position:absolute; top:-12%; left:-17%; height:60px;}		 
@@ -24,8 +17,8 @@ footer .txt_copy {color: rgba(255, 255, 255, 0.7); display: block; font-weight: 
 /*header search*/
 .search__SearchBlock{position: absolute; left: 1%; top: 1%; width: 554px; height: 45px;}
 .search__SearchBlock #searchFood{
-	top:-10%;
-	left:-6%;
+	top:-12%;
+	left:-5%;
     position: absolute;
     width: 650px;
     margin-left: 32px;
@@ -101,8 +94,6 @@ span.srchval{color:red;}
 }
 			 
 /*section*/
- section div{ display: flex; text-align: center; margin-left: 0; margin-top: 200px; min-height: 600px;
-				font-size: 100px; } 
 				
 				
 				
@@ -128,6 +119,7 @@ span.srchval{color:red;}
 /*최근본 맛집*/
 .recent_food{position: relative;margin: 16px -183px 0 0; height:600px;float: right;background:white;width: 282px;
 			 border-radius: 3px; padding: 10px; border:1px solid #ccc; z-index:1000;}
+.recent_foodimg{width:80px; height:80px;}
 .recent_triangle{
 	z-index: 1000;
 	position: absolute;
@@ -142,15 +134,15 @@ span.srchval{color:red;}
 }
 .recent_food ul{overflow: hidden; margin:0 auto; padding:0 13px; }
 .recent_food ul li{ margin-right: 16px; margin-bottom: 0px; }
-.recent_food ul li a{float: left;padding:7px 16px 3px 32px; border-bottom:1px solid #ccc; font-size: 17px; color: dimgray;}
+.recent_food ul li a{float: left;padding:7px 16px 3px 32px;  font-size: 17px; color: dimgray;}
 .recent_food ul li img{padding:0; border:0;}
 .recent_food ul li ul{position: absolute; left: 0; height:600px; top: 40px; width: 280px; border: 0; padding:15px; }
 .recent_food ul li ul li{display:block; }
-.recent_food ul li ul li .recent_foodimg{ border:0; width:80px;padding-bottom:20px;}
-.recent_food ul li ul li .food_name{font-size:19px; font-weight:bold; display:inline-block; margin-top:10px; padding-right:12px; }
-.recent_food ul li ul li .food_grade{font-size:17px; color:orange; display:inline-block; }
-.recent_food ul li ul li .food_location{font-size:15px; padding-top:10px;  color:gray; }
-.recent_food ul li ul li .food_type{padding-bottom:21px;font-size:15px;border-bottom:1px solid #ccc; padding-top:10px;color:gray; }
+.recent_food ul li ul li .recent_foodimg{ border:0;;padding-bottom:3px;}
+.recent_food ul li ul li .food_name{font-size:17px; font-weight:bold; display:inline-block; margin-top:10px; padding-right:12px; }
+.recent_food ul li ul li .food_grade{font-size:16px; color:orange; display:inline-block; }
+.recent_food ul li ul li .food_location{font-size:14px; padding-top:10px;  color:gray; }
+.recent_food ul li ul li .food_type{padding-bottom:21px;font-size:14px;  padding-top:10px;color:gray; }
 
 .recent_food ul li ul li a{overflow: hidden; padding-left:0; text-overflow: ellipsis; white-space: nowrap; text-decoration-line: none; display: inline; cursor: pointer;  font-size: 18px;}
 .recent_food ul li.active a{color: black; border-bottom:3px solid orange;}
@@ -166,7 +158,7 @@ span.srchval{color:red;}
 .recentBottom .logoutbutton{position:absolute; padding-top:10px; right:39%; font-size:25px; color:orange}
 
 /*headerImg*/
-.ImgPosition{width:1440px; height:400px;  margin:0 auto;}
+.ImgPosition{width:1440px;  margin:0 auto;}
 .headerImg img{width:1440px;}
 .headerImg button.slick-prev.slick-arrow{visibility:hidden;}
 .headerImg button.slick-next.slick-arrow{visibility:hidden;}
@@ -176,16 +168,25 @@ span.srchval{color:red;}
 	z-index : 100;
 } */
 
-
+.bodyStart{
+	width:1440px; margin:0 auto; position:relative; min-height:900px;
+}
 
 
 /*footer*/
+#footer{ width:1440px; display: block; background-color: #2e2e2e; position: relative; text-align: left; height: 300px;
+		margin:0 auto;}
+#footer .inner{ margin: 0 auto; padding-top: 65px; max-width: 1200px;}
+.copyrights small{display: block; color: #fff; font-size: 0.875rem;line-height: 22px;}
+.copyright{ display: inline-block; padding-top: 40px; font-weight: bold; line-height: 13px; vertical-align: top;}
+footer .txt_copy {color: rgba(255, 255, 255, 0.7); display: block; font-weight: 500; font-size: 12px;
+				 line-height: 18px;}
 .screen_out{overflow: hidden; position: absolute; width: 0; height: 0; line-height: 0; text-indent: -9999px;}
 .info_service{ padding: 28px 0 34px; }
 .link_service{display: inline-block; font-size: 16px; line-height: 19px; color: #fff;
 				/* color: rgba(255, 255, 255, 0.7); */ vertical-align: top; font-weight: bold; }
 .link_service2{position: relative; margin-left: 10px; padding-left: 22px;}
-				
+		
 
 
 

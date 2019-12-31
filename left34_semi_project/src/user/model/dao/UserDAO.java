@@ -61,4 +61,42 @@ public class UserDAO {
 		
 	}
 
+	public User selectOne(Connection conn, String memberId) {
+		User u = null;
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		String query = prop.getProperty("SELECTONE");
+		
+		try {
+			//1.Statement객체 생성
+			pstmt = conn.prepareStatement(query);//미완성쿼리전달
+			//2.미완성 쿼리 값 대입
+			pstmt.setString(1, memberId);
+			//3.쿼리실행 => ResultSet
+			rset = pstmt.executeQuery();
+			//4.ResultSet => Member
+			if(rset.next()) {
+				u = new User();
+				u.setUserId(rset.getString("id"));
+				u.setPwd(rset.getString("pwd"));
+				u.setName(rset.getString("name"));
+				u.setEmail(rset.getString("email"));
+				u.setAddress(rset.getString("address"));
+				u.setPhone(rset.getString("phone"));
+				u.setAge(rset.getInt("age"));
+				u.setFavorite(rset.getString("favorite"));
+				u.setGender(rset.getString("gender"));
+			}
+//			System.out.println("member@dao.selectOne="+m);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally{
+			//5.자원반납
+			close(rset);
+			close(pstmt);
+		}
+		
+		return u;
+	}
+
 }
